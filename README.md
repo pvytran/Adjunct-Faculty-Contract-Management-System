@@ -1,487 +1,238 @@
 # Adjunct Faculty Contract Management System
 
-> An automated Microsoft 365 solution for managing faculty contract data, contract generation, electronic signatures, document storage, workflow status, and reporting.
-
----
-
 ## Project Overview
 
-The **Adjunct Faculty Contract Management System** is an integrated workflow designed to streamline the contract-management process.
+A Microsoft 365-based solution designed to streamline adjunct faculty contract management through centralized data, automated contract generation, electronic signatures, secure document storage, and reporting.
 
-The solution combines Microsoft 365 services with electronic-signature capabilities to reduce repetitive manual work, improve data consistency, centralize documents, and provide visibility into contract status.
+The system replaces manual, disconnected processes with an integrated workflow using **SharePoint, Power Automate, Microsoft Word, DocuSign, and Power BI**.
 
-### Core Technologies
-
-* **SharePoint** — Data and document management
-* **Power Automate** — Workflow automation
-* **Microsoft Word** — Contract templates
-* **DocuSign** — Electronic signatures
-* **Power BI** — Reporting and analytics
+> **Portfolio Project:** This repository contains sanitized documentation and fictional sample data for demonstration purposes. No real faculty or contract information is included.
 
 ---
 
 ## Problem
 
-A manual contract-management process can require users to:
+The original process relied on multiple data sources and manual steps for:
 
-* Collect faculty information
-* Maintain course information
-* Create contracts
-* Review documents
-* Route contracts for approval
-* Send contracts for signatures
-* Track signing status
-* Store completed documents
-* Monitor outstanding contracts
-* Prepare status reports
+* Collecting faculty and course information
+* Preparing contracts
+* Routing contracts for review and approval
+* Obtaining electronic signatures
+* Tracking contract status
+* Storing completed contracts
+* Producing status reports
 
-These activities can introduce repetitive work, inconsistent data, document-management challenges, and limited visibility into the current status of contracts.
+This created opportunities for duplicate records, data-entry errors, delayed contracts, and limited visibility into contract status.
 
 ---
 
 ## Solution
 
-The system connects data management, workflow automation, contract generation, electronic signatures, document storage, and reporting into one integrated process.
+The proposed system centralizes contract-related information in SharePoint and uses Power Automate to automate the workflow.
+
+### Workflow
 
 ```text
-                    ┌──────────────────┐
-                    │    SharePoint    │
-                    │  Data Management │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │  Power Automate  │
-                    │ Workflow Engine  │
-                    └────────┬─────────┘
-                             │
-                    ┌────────┴────────┐
-                    ▼                 ▼
-          ┌─────────────────┐   ┌──────────────┐
-          │ Microsoft Word  │   │   Approval   │
-          │ Contract        │   │    Process   │
-          │ Generation      │   └──────┬───────┘
-          └────────┬────────┘          │
-                   └──────────┬────────┘
-                              ▼
-                       ┌──────────────┐
-                       │   DocuSign   │
-                       │ E-Signature  │
-                       └──────┬───────┘
-                              │
-                              ▼
-                       ┌──────────────┐
-                       │  SharePoint  │
-                       │   Storage    │
-                       └──────┬───────┘
-                              │
-                              ▼
-                       ┌──────────────┐
-                       │   Power BI   │
-                       │  Reporting   │
-                       └──────────────┘
+Faculty & Course Data
+        ↓
+SharePoint
+        ↓
+Power Automate
+        ↓
+Contract Generation
+        ↓
+Review / Approval
+        ↓
+DocuSign
+        ↓
+Signed Contract Storage
+        ↓
+Power BI Reporting
 ```
+
+---
+
+## Technology Stack
+
+| Technology     | Purpose                               |
+| -------------- | ------------------------------------- |
+| SharePoint     | Centralized data and document storage |
+| Power Automate | Workflow automation and routing       |
+| Microsoft Word | Contract template generation          |
+| DocuSign       | Electronic signatures and audit trail |
+| Power BI       | Reporting and status dashboards       |
 
 ---
 
 ## Key Features
 
-### Data Management
+### Centralized Data Management
 
-* Centralized faculty information
-* Course and schedule information
-* Contract records
-* Structured SharePoint lists
-* Document libraries
+* Faculty information stored in SharePoint
+* Course and section information maintained in structured lists
+* Contract records linked to faculty and course information
 
-### Contract Automation
+### Automated Contract Generation
 
-* Automated contract generation
-* Standardized templates
-* Automated workflow routing
-* Status tracking
-* Duplicate-prevention logic
+* Contract information is collected from centralized data
+* Power Automate processes contract requests
+* Microsoft Word templates are populated with contract information
 
 ### Electronic Signatures
 
-* Electronic contract delivery
-* Signature tracking
-* Completion status
-* Signed-document storage
+* Contracts are routed through DocuSign
+* Signature status can be tracked
+* Completed documents are stored for future reference
+
+### Status Tracking
+
+The workflow supports tracking contract progress through stages such as:
+
+```text
+Generated
+   ↓
+Review
+   ↓
+Approval
+   ↓
+Signature
+   ↓
+Completed
+```
 
 ### Reporting
 
-Power BI can provide visibility into:
-
-* Contract status
-* Pending contracts
-* Completed contracts
-* Processing information
-* Other approved project metrics
-
----
-
-## How the Workflow Works
-
-```text
-1. Data Entered
-       ↓
-2. SharePoint Record
-       ↓
-3. Data Validation
-       ↓
-4. Contract Generation
-       ↓
-5. Review / Approval
-       ↓
-6. DocuSign
-       ↓
-7. Electronic Signature
-       ↓
-8. Signed Contract Stored
-       ↓
-9. Status Updated
-       ↓
-10. Power BI Reporting
-```
-
-The workflow is designed to combine automation with human review rather than attempting to automate every business decision.
-
----
-
-## System Architecture
-
-The system uses a layered architecture.
-
-```text
-┌───────────────────────────────────────────┐
-│              User / Business              │
-└─────────────────────┬─────────────────────┘
-                      │
-                      ▼
-┌───────────────────────────────────────────┐
-│              SharePoint                   │
-│        Data + Document Management         │
-└─────────────────────┬─────────────────────┘
-                      │
-                      ▼
-┌───────────────────────────────────────────┐
-│            Power Automate                 │
-│         Workflow Orchestration            │
-└──────────┬──────────┬──────────┬─────────┘
-           │          │          │
-           ▼          ▼          ▼
-       Microsoft   DocuSign   SharePoint
-         Word                  Storage
-           │                     │
-           └──────────┬──────────┘
-                      ▼
-               ┌──────────────┐
-               │   Power BI   │
-               │   Reporting  │
-               └──────────────┘
-```
-
-See:
-
-**[System Architecture](architecture/system-architecture.md)**
-
----
-
-## Project Components
-
-| Component      | Purpose                          |
-| -------------- | -------------------------------- |
-| SharePoint     | Data and document management     |
-| Power Automate | Workflow automation              |
-| Microsoft Word | Contract template and generation |
-| DocuSign       | Electronic signatures            |
-| Power BI       | Reporting and analytics          |
-
----
-
-## Data Flow
-
-```text
-Source Information
-       ↓
-SharePoint
-       ↓
-Power Automate
-       ↓
-Contract Template
-       ↓
-Generated Contract
-       ↓
-Review
-       ↓
-Electronic Signature
-       ↓
-Signed Document
-       ↓
-SharePoint
-       ↓
-Power BI
-```
+Power BI provides reporting and visibility into contract activity and status.
 
 ---
 
 ## Security Considerations
 
-Security was considered as part of the system design.
+Security was considered throughout the system design.
 
-Key concepts include:
+Key considerations include:
 
-* Access control
-* Least privilege
-* Controlled document access
-* Data validation
+* Least-privilege access
+* Role-based access control
+* Controlled SharePoint permissions
 * Secure document storage
-* Workflow authorization
-* Auditability
-* Minimizing unnecessary information exposure
+* Protection of contract-related information
+* Validation of imported data
+* Duplicate-record prevention
+* Avoiding sensitive information in the public GitHub repository
 
-The public GitHub documentation does **not** contain real faculty information, credentials, contracts, access tokens, or other confidential information.
+See [Security and Compliance](docs/security-and-compliance.md) for additional details.
 
-See:
+---
 
-**[Security & Compliance](docs/security-and-compliance.md)**
+## Architecture
+
+The system architecture and component relationships are documented here:
+
+[View System Architecture](architecture/system-architecture.md)
+
+---
+
+## Workflows
+
+Detailed workflow documentation:
+
+* [Data Collection](workflows/data-collection.md)
+* [Contract Generation](workflows/contract-generation.md)
+* [Signing and Reporting](workflows/signing-and-reporting.md)
+
+---
+
+## Example Data
+
+The `examples/` directory contains fictional data demonstrating the structure of the system:
+
+* `sample-faculty-data.csv`
+* `sample-course-data.csv`
+* `sample-contract-data.csv`
+
+All example information is fictional and intended only for portfolio demonstration.
 
 ---
 
 ## Testing
 
-The system can be evaluated through multiple levels of testing:
+Testing documentation covers workflow validation and functional testing of major system components.
 
-```text
-Component Testing
-       ↓
-Workflow Testing
-       ↓
-Integration Testing
-       ↓
-Negative Testing
-       ↓
-Security Testing
-       ↓
-User Acceptance Testing
-       ↓
-Final Validation
-```
-
-Testing areas include:
-
-* SharePoint data
-* Power Automate workflows
-* Contract generation
-* Approval processing
-* Electronic signatures
-* Document storage
-* Status tracking
-* Power BI reporting
-* Access control
-
-See:
-
-**[Testing & Quality Assurance](docs/testing.md)**
+[View Testing Documentation](docs/testing.md)
 
 ---
 
 ## Project Contribution
 
-The project demonstrates experience with:
+My project work included requirements analysis, system design, SharePoint data organization, workflow automation, contract generation, electronic-signature integration, status tracking, reporting, testing, and security-aware documentation.
 
-### IT / Systems
+[View Project Contribution](docs/project-contribution.md)
 
-* Requirements analysis
-* System architecture
-* Workflow design
-* System integration
-* Data management
-* Document management
-* Testing
-* Technical documentation
+---
 
-### Microsoft 365
+## Skills Demonstrated
+
+**Cybersecurity & IT**
+
+* Access Control
+* Data Security
+* Security-Aware System Design
+* Risk Management
+* Data Validation
+* Secure Document Management
+
+**Microsoft 365**
 
 * SharePoint
 * Power Automate
 * Power BI
 * Microsoft Word
 
-### Security
+**Additional Skills**
 
-* Access control
-* Least privilege
-* Data validation
-* Secure document handling
-* Security-aware system design
-* Information exposure reduction
-
-See:
-
-**[Project Contribution](docs/project-contribution.md)**
+* Workflow Automation
+* Requirements Analysis
+* System Design
+* Data Management
+* Testing
+* Documentation
 
 ---
 
-## Documentation
+## Repository Structure
 
-| Document                                                   | Description                                 |
-| ---------------------------------------------------------- | ------------------------------------------- |
-| [System Architecture](architecture/system-architecture.md) | Overall technical architecture and workflow |
-| [Data Collection](workflows/data-collection.md)            | Data-management workflow                    |
-| [Contract Generation](workflows/contract-generation.md)    | Automated contract-generation process       |
-| [Signing & Reporting](workflows/signing-and-reporting.md)  | Electronic signatures and reporting         |
-| [Security & Compliance](docs/security-and-compliance.md)   | Security considerations                     |
-| [Testing](docs/testing.md)                                 | Testing strategy and test cases             |
-| [Project Contribution](docs/project-contribution.md)       | Technical contribution and skills           |
-
----
-
-## Project Workflow
-
-### 1. Data Management
-
-Information is maintained in structured SharePoint data sources.
-
-### 2. Validation
-
-The workflow checks information before continuing.
-
-### 3. Contract Generation
-
-Power Automate uses the available information to populate a standardized contract template.
-
-### 4. Review
-
-The generated contract can be reviewed before continuing.
-
-### 5. Electronic Signature
-
-Approved contracts can be routed through DocuSign.
-
-### 6. Document Storage
-
-Completed documents are stored in SharePoint.
-
-### 7. Reporting
-
-Power BI provides reporting and visualization of approved contract-status information.
-
----
-
-## Example Architecture
-
-```mermaid
-flowchart TD
-
-    A["Faculty / Course Data"]
-    B["SharePoint"]
-    C["Power Automate"]
-    D["Microsoft Word"]
-    E["Review / Approval"]
-    F["DocuSign"]
-    G["Signed Contract"]
-    H["SharePoint Storage"]
-    I["Power BI"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
+```text
+adjunct-faculty-contract-management-system/
+│
+├── README.md
+├── SECURITY.md
+├── .gitignore
+│
+├── architecture/
+│   └── system-architecture.md
+│
+├── workflows/
+│   ├── data-collection.md
+│   ├── contract-generation.md
+│   └── signing-and-reporting.md
+│
+├── examples/
+│   ├── sample-faculty-data.csv
+│   ├── sample-course-data.csv
+│   └── sample-contract-data.csv
+│
+└── docs/
+    ├── README.md
+    ├── security-and-compliance.md
+    ├── testing.md
+    └── project-contribution.md
 ```
-
----
-
-## Skills Demonstrated
-
-This project demonstrates practical experience in:
-
-**Microsoft 365**
-
-`SharePoint` · `Power Automate` · `Power BI` · `Microsoft Word`
-
-**Automation**
-
-`Workflow Automation` · `Approvals` · `Notifications` · `Status Tracking`
-
-**Data**
-
-`Data Management` · `Validation` · `Document Management` · `Reporting`
-
-**Security**
-
-`Access Control` · `Least Privilege` · `Data Protection` · `Auditability`
-
-**Project Development**
-
-`Requirements Analysis` · `System Design` · `Integration` · `Testing` · `Documentation`
 
 ---
 
 ## Portfolio Purpose
 
-This repository documents the architecture, workflow design, testing approach, security considerations, and technical contributions associated with the project.
+This repository demonstrates practical experience with **workflow automation, Microsoft 365 technologies, data management, security-aware system design, testing, and technical documentation**.
 
-It is intended as a professional portfolio example demonstrating how Microsoft 365 technologies can be integrated to solve a real-world business-process problem.
-
----
-
-## Privacy & Security Notice
-
-This public repository uses sanitized and generalized information.
-
-It does not intentionally contain:
-
-* Real personal information
-* Faculty records
-* Real contracts
-* Passwords
-* API keys
-* Access tokens
-* Private credentials
-* Confidential documents
-* Restricted organizational information
-
-Any example data should be treated as demonstration data only.
-
----
-
-## Project Status
-
-**Documentation:** Active
-**Architecture:** Documented
-**Workflow:** Documented
-**Testing Strategy:** Documented
-**Security Considerations:** Documented
-**Portfolio Version:** Public / Sanitized
-
----
-
-## Conclusion
-
-The **Adjunct Faculty Contract Management System** demonstrates how cloud-based productivity platforms can be integrated to automate a multi-step business process.
-
-The solution combines:
-
-```text
-Data Management
-       +
-Workflow Automation
-       +
-Document Generation
-       +
-Electronic Signatures
-       +
-Document Storage
-       +
-Business Intelligence
-       +
-Security
-```
-
-The result is a structured, automated workflow designed to reduce repetitive work, improve visibility, and support more consistent contract processing.
+The project is documented using sanitized information and fictional sample data to protect sensitive information.
