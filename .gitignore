@@ -1,0 +1,192 @@
+# ==========================================
+
+# Adjunct Faculty Contract Management System
+
+# Git Ignore Configuration
+
+# ==========================================
+
+# ------------------------------
+
+# Environment and configuration
+
+# ------------------------------
+
+.env
+.env.*
+!.env.example
+
+config.local.*
+settings.local.*
+
+# ------------------------------
+
+# Credentials and secrets
+
+# ------------------------------
+
+credentials.json
+secrets.json
+secret.json
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ------------------------------
+
+# API / authentication files
+
+# ------------------------------
+
+token.json
+access_token.json
+refresh_token.json
+
+# ------------------------------
+
+# Database files
+
+# ------------------------------
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------
+
+# Logs
+
+# ------------------------------
+
+*.log
+logs/
+
+# ------------------------------
+
+# Temporary files
+
+# ------------------------------
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# ------------------------------
+
+# Operating system files
+
+# ------------------------------
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------------------------------
+
+# IDE / editor files
+
+# ------------------------------
+
+.vscode/
+.idea/
+
+# ------------------------------
+
+# Python
+
+# ------------------------------
+
+**pycache**/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# ------------------------------
+
+# Node.js
+
+# ------------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ------------------------------
+
+# Local development files
+
+# ------------------------------
+
+local/
+private/
+secrets/
+
+# ------------------------------
+
+# Sensitive project exports
+
+# ------------------------------
+
+private-data/
+confidential/
+real-contracts/
+personal-data/
+
+# ------------------------------
+
+# Exported reports containing
+
+# potentially sensitive information
+
+# ------------------------------
+
+*.xlsx
+*.xls
+*.csv
+
+# Allow sanitized example data
+
+!examples/
+!examples/*.csv
+
+# ------------------------------
+
+# Archive files
+
+# ------------------------------
+
+*.zip
+*.7z
+*.rar
+
+# ------------------------------
+
+# OS / VM files
+
+# ------------------------------
+
+*.vmem
+*.vmdk
+*.nvram
+*.vmxf
+*.vmss
+*.vmx.lck/
+
+# ------------------------------
+
+# Local screenshots
+
+# ------------------------------
+
+# Uncomment if screenshots contain
+
+# private or sensitive information.
+
+# screenshots/private/
