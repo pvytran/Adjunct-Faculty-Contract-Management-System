@@ -1,0 +1,5 @@
+faculty_id,faculty_type,department,email,status,max_courses
+FAC-001,Adjunct,Information Systems,faculty001@example.com,Active,3
+FAC-002,Adjunct,Information Systems,faculty002@example.com,Active,3
+FAC-003,Adjunct,Information Technology,faculty003@example.com,Active,2
+FAC-004,Adjunct,Information Technology,faculty004@example.com,Active,3
