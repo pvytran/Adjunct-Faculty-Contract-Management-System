@@ -1,0 +1,5 @@
+contract_id,faculty_id,term,course_code,credits,contract_status,generated_date,signature_status,storage_status
+CON-2025-001,FAC-001,Fall 2025,IT-100,3,Generated,2025-08-01,Pending,Stored
+CON-2025-002,FAC-002,Fall 2025,IT-223,3,Generated,2025-08-01,Signed,Stored
+CON-2025-003,FAC-003,Fall 2025,IT-341,3,Generated,2025-08-02,Pending,Stored
+CON-2025-004,FAC-004,Fall 2025,IT-207,3,Generated,2025-08-02,Signed,Stored
