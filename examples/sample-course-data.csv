@@ -1,0 +1,5 @@
+crn,term,section,course_title,instructor_id,course_code,credit_hours,campus,room,meeting_pattern
+CRN10001,Fall 2025,001,Introduction to Information Technology,FAC-001,IT-100,3,Fairfax,Room 101,MW 10:30-11:45
+CRN10002,Fall 2025,002,Information Security,FAC-002,IT-223,3,Fairfax,Room 202,TR 13:30-14:45
+CRN10003,Fall 2025,001,Data Communications and Networking,FAC-003,IT-341,3,Fairfax,Room 303,MW 13:30-14:45
+CRN10004,Fall 2025,003,Database Applications,FAC-004,IT-207,3,Arlington,Room 104,TR 10:30-11:45
